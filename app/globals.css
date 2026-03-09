@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --primary: 15 15 35;
+  --secondary: 25 30 60;
+  --accent: 232 62 140;
+  --accent-secondary: 245 166 35;
+  --background: 10 10 28;
+  --foreground: 245 245 250;
+  --card: 25 30 60;
+  --card-border: 55 55 85;
+  --text-main: 245 245 250;
+  --text-muted: 148 155 175;
+}
+
+.light {
+  color-scheme: light;
+  --primary: 248 249 252;
+  --secondary: 255 255 255;
+  --accent: 220 50 120;
+  --accent-secondary: 215 140 20;
+  --background: 248 249 252;
+  --foreground: 15 15 35;
+  --card: 255 255 255;
+  --card-border: 218 225 236;
+  --text-main: 15 15 35;
+  --text-muted: 55 65 81;
+}
+
+@layer base {
+  body {
+    @apply antialiased transition-colors duration-300;
+    background-color: rgb(var(--background));
+    color: rgb(var(--text-main));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee-scroll 40s linear infinite;
+  }
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Animated gradient text */
+  .gradient-text-animated {
+    background: linear-gradient(90deg,
+        rgb(var(--accent)),
+        rgb(var(--accent-secondary)),
+        rgb(var(--accent)),
+        rgb(var(--accent-secondary)));
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 4s ease-in-out infinite;
+  }
+
+  @keyframes gradient-shift {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Noise grain overlay */
+  .noise-grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    mix-blend-mode: overlay;
+  }
+}
