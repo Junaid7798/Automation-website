@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌌 Antigravity AI — AI Automation Agency
 
-## Getting Started
+> Scale Your Business with AI — Without Scaling Your Team. We build custom AI automations that eliminate manual work, reduce costs, and unlock exponential growth for ambitious businesses.
 
-First, run the development server:
+---
+
+## 🖥️ Live Interface Preview
+
+Below is a preview of the premium, dark-mode landing page designed for **Antigravity AI**:
+
+![Antigravity AI Hero Section](public/screenshot.png)
+
+---
+
+## ✨ Features
+
+- **Premium Modern Design**: Implements dark-mode glassmorphism, harmonious color palettes, subtle glowing micro-animations, and responsive layout architectures.
+- **Dynamic Contact & Lead Capture**: Fully interactive contact form built with React Hook Form and Zod validation schemas.
+- **Intelligent Lead Scoring**: Built-in backend lead qualification system that scores prospects automatically based on company size, role, website status, and message context.
+- **Google Sheets Integration**: Seamless forwarding of lead scores and submission details to Google Apps Script.
+- **Smooth Page Motion**: Integrated with Framer Motion and Lenis smooth scrolling for premium visual feedback.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 14 (App Router)](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) & PostCSS
+- **Animation**: [Framer Motion](https://www.framer.com/motion/) & [Lenis Smooth Scroll](https://lenis.darkroom.engineering/)
+- **Form Management**: [React Hook Form](https://react-hook-form.com/) & [Zod Validation](https://zod.dev/)
+- **Programming Language**: [TypeScript](https://www.typescriptlang.org/)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+Ensure you have [Node.js](https://nodejs.org/) installed (version 18.x or later recommended).
+
+### 2. Installation
+Clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/Junaid7798/Automation-website.git
+cd Automation-website
+npm install
+```
+
+### 3. Environment Setup
+Create a `.env.local` file in the root directory (refer to `.env.local` template):
+
+```env
+GOOGLE_SCRIPT_URL=your-google-script-url-here
+RESEND_API_KEY=your-resend-api-key-here
+```
+
+### 4. Running the Development Server
+Start the local server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📊 Lead Scoring System
 
-## Learn More
+Antigravity AI qualifies inbound leads dynamically. Points are calculated on submit using:
+- **Company Size**: Higher scores for larger companies.
+- **Job Role**: Prioritizes decision-makers (CEOs, Founders, CTOs, Operations Managers).
+- **Online Presence**: Validates and analyzes company website.
+- **Project Scope/Budget**: Gauges intent in description fields.
 
-To learn more about Next.js, take a look at the following resources:
+For the detailed formula and logic breakdown, please refer to our [Lead Score Documentation](Lead-Score.md).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Building for Production
 
-## Deploy on Vercel
+To create an optimized production build:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm run start
+```
