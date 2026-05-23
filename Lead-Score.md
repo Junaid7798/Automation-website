@@ -14,6 +14,10 @@ The lead score ranges from **1 to 100**. It is calculated dynamically upon form 
 
 The final score is capped at **100** using `Math.min(score, 100)`.
 
+### 📊 Visual Scoring Breakdown
+
+![Lead Score Infographic](public/lead_score_infographic.png)
+
 ---
 
 ## Scoring Criteria & Weights
