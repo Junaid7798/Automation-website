@@ -18,17 +18,17 @@ The final score is capped at **100** using `Math.min(score, 100)`.
 
 ## 📽️ Business Presentation Deck
 
-If you are presenting how this system works to business stakeholders, you can use the two presentation slides below:
+If you are presenting how this system works to business stakeholders, you can use the two minimalist presentation slides below:
 
 ### Slide 1: Inbound Lead-to-Routing Workflow
 Shows how lead data dynamically flows through the scoring engine to route prospects to Sales or Automated Nurturing:
 
-![Lead Scoring Presentation Slide](public/lead_score_presentation.png)
+![Lead Scoring Presentation Slide](public/lead_score_workflow_minimal.png)
 
 ### Slide 2: Evaluation Scoring Matrix & Scenarios
 Shows the exact math, point-weight distribution, and real-world calculation scenarios:
 
-![Lead Scoring Evaluation Matrix Slide](public/lead_score_evaluation_matrix.png)
+![Lead Scoring Evaluation Matrix Slide](public/lead_score_evaluation_minimal.png)
 
 ---
 
