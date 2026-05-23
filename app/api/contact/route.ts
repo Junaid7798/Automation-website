@@ -104,12 +104,14 @@ export async function POST(request: NextRequest) {
         // Forward to Google Apps Script (server-side, URL stays hidden)
         const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL;
 
-        if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("your-google-script-id")) {
+        if (!GOOGLE_SCRIPT_URL || 
+            GOOGLE_SCRIPT_URL.toLowerCase().includes("your-google-script-id") || 
+            GOOGLE_SCRIPT_URL.includes("YOUR_SCRIPT_ID_HERE")) {
             // Dev mode: log and return success
             console.log("📋 [DEV MODE] Form submission:", { ...submitData, leadScore });
             return NextResponse.json({
                 status: "success",
-                message: "Lead saved (dev mode)",
+                message: "Lead saved (dev mode - no Google Script URL set)",
                 leadScore,
             });
         }
@@ -117,7 +119,11 @@ export async function POST(request: NextRequest) {
         const scriptRes = await fetch(GOOGLE_SCRIPT_URL, {
             method: "POST",
             headers: { "Content-Type": "text/plain" },
-            body: JSON.stringify({ ...submitData, leadScore, submittedAt: new Date().toISOString() }),
+            body: JSON.stringify({ 
+                ...submitData, 
+                leadScore, 
+                submittedAt: new Date().toISOString().slice(0, 19).replace("T", " ") 
+            }),
             redirect: "follow",
         });
 

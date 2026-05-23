@@ -5,7 +5,7 @@ export const contactSchema = z.object({
     lastName: z.string().min(2, "Required"),
     email: z.string().email("Invalid email"),
     companyName: z.string().min(1, "Required"),
-    companyWebsite: z.string().url().optional().or(z.literal("")),
+    companyWebsite: z.string().optional(),
     role: z.enum([
         "CEO/Founder", "CTO", "Operations Manager",
         "Marketing Manager", "Freelancer", "Other"
