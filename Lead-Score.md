@@ -14,11 +14,21 @@ The lead score ranges from **1 to 100**. It is calculated dynamically upon form 
 
 The final score is capped at **100** using `Math.min(score, 100)`.
 
-### 📊 Business Presentation Flow
+---
 
-Below is a business presentation slide showing how lead data flows through the scoring engine and dynamically routes prospects to Sales or Automated Nurturing:
+## 📽️ Business Presentation Deck
+
+If you are presenting how this system works to business stakeholders, you can use the two presentation slides below:
+
+### Slide 1: Inbound Lead-to-Routing Workflow
+Shows how lead data dynamically flows through the scoring engine to route prospects to Sales or Automated Nurturing:
 
 ![Lead Scoring Presentation Slide](public/lead_score_presentation.png)
+
+### Slide 2: Evaluation Scoring Matrix & Scenarios
+Shows the exact math, point-weight distribution, and real-world calculation scenarios:
+
+![Lead Scoring Evaluation Matrix Slide](public/lead_score_evaluation_matrix.png)
 
 ---
 
